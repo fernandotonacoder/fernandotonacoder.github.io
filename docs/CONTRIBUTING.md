@@ -26,6 +26,7 @@ git push origin feature/your-feature
 ```
 
 **CI/CD Pipeline:**
+
 - **On PR:** Tests, linting, format checks
 - **On merge to main:** Auto-deploys to GitHub Pages
 
@@ -48,16 +49,19 @@ npm run format:check  # Check if formatted correctly
 ### Translation System
 
 **Why custom instead of i18n library?**
+
 - No external dependencies
 - Tiny footprint (~100 lines)
 - Does exactly what we need, nothing more
 
 **Language detection priority:**
+
 1. localStorage (`language` key)
 2. Browser language (`navigator.language`)
 3. Fallback to English
 
 **Translation keys:** Flat structure in `/locales/*.json`. HTML elements use `data-translate` attributes:
+
 - `data-translate="key"` → Updates `textContent`
 - `data-translate-alt="key"` → Updates `alt` attribute
 - `data-translate-html="key"` → Updates `innerHTML` (supported but unused)
@@ -67,6 +71,7 @@ npm run format:check  # Check if formatted correctly
 ### Custom Language Selector
 
 **Why not a normal `<select>`?**
+
 - Needed custom styling (glassmorphism effect)
 - Better control over appearance
 - Still accessible with keyboard navigation
@@ -76,6 +81,7 @@ npm run format:check  # Check if formatted correctly
 **Color scheme:** CSS variables in `:root` for easy theming
 
 **Icon colors:** SVG filters for color manipulation:
+
 ```css
 /* White icons on dark background */
 filter: brightness(0) invert(1);
@@ -85,6 +91,7 @@ filter: brightness(0) invert(0);
 ```
 
 **Glassmorphism effect:**
+
 ```css
 background: rgba(255, 255, 255, 0.1);
 backdrop-filter: blur(10px);
@@ -93,15 +100,17 @@ backdrop-filter: blur(10px);
 ### ESLint Config
 
 **Why flat config (`eslint.config.mjs`)?**
+
 - ESLint 9+ requires it
 - Different environments need different globals:
-  - Browser JS: `setLanguage`, `getCurrentLanguage` (custom globals)
-  - Test files: Jest globals (`describe`, `test`, `expect`)
-  - Jest config: Node.js globals (`module`)
+    - Browser JS: `setLanguage`, `getCurrentLanguage` (custom globals)
+    - Test files: Jest globals (`describe`, `test`, `expect`)
+    - Jest config: Node.js globals (`module`)
 
 ### Prettier Config
 
 **Why these settings?**
+
 - Double quotes, no trailing commas, always parens → Personal preference from TypeScript/C# background
 - `tabWidth: 4` → Personal preference from C# background
 
@@ -128,18 +137,22 @@ backdrop-filter: blur(10px);
 ## Gotchas
 
 **Tests failing?**
+
 - Make sure JSON files don't have trailing commas (Prettier removes them automatically)
 - Run `npm test -- --clearCache` if weird caching issues
 
 **Translations not loading?**
+
 - Check browser console for fetch errors
 - Verify JSON is valid
 - Check file paths are correct
 
 **Styles not applying?**
+
 - Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
 
 **Can't push to main?**
+
 - That's intentional. Create a feature branch and PR.
 
 ---
@@ -147,10 +160,12 @@ backdrop-filter: blur(10px);
 ## Testing Strategy
 
 **What we test:**
+
 - Translation system: Loading, language switching, localStorage persistence
 - Custom selector: UI interactions, language selection
 
 **What we don't test:**
+
 - Bootstrap components (already tested by Bootstrap)
 - Browser APIs (fetch, localStorage)
 - CSS styling
@@ -162,17 +177,20 @@ backdrop-filter: blur(10px);
 ## Design Tokens
 
 ### Colors
+
 ```css
---clr-navy: #001f3f;           /* Primary background */
---clr-blue-text: #2563eb;      /* Accent text */
+--clr-navy: #001f3f; /* Primary background */
+--clr-blue-text: #2563eb; /* Accent text */
 --clr-linkedin: #0077b5;
 --clr-github: #333;
 ```
 
 ### Spacing Scale (Bootstrap)
+
 `0` = 0, `1` = 4px, `2` = 8px, `3` = 16px, `4` = 24px, `5` = 48px
 
 ### Breakpoints
+
 - Mobile first approach
 - Key breakpoint: 992px (tablets → desktop)
 

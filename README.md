@@ -36,9 +36,11 @@
 ## Quick Start
 
 ### For Visitors
+
 Simply visit: **[fernandotonacoder.github.io](https://fernandotonacoder.github.io)**
 
 ### For Developers
+
 ```bash
 # Clone and install
 git clone https://github.com/fernandotonacoder/fernandotonacoder.github.io.git
