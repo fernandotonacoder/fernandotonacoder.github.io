@@ -1,6 +1,6 @@
 let translations = {};
 
-async function loadTranslations(lang) {
+const loadTranslations = async (lang) => {
     try {
         const response = await fetch(`./locales/${lang}.json`);
         if (!response.ok) throw new Error("Translation file not found");
@@ -13,40 +13,42 @@ async function loadTranslations(lang) {
         }
         return {};
     }
-}
+};
 
-function getNestedProperty(obj, path) {
+const getNestedProperty = (obj, path) => {
     return path.split(".").reduce((current, key) => current?.[key], obj);
-}
+};
 
-function getBrowserLanguage() {
+const getBrowserLanguage = () => {
     const browserLang = navigator.language.split("-")[0];
     const supportedLangs = ["en", "es", "fr", "pt"];
     return supportedLangs.includes(browserLang) ? browserLang : "en";
-}
+};
 
-function getCurrentLanguage() {
+const getCurrentLanguage = () => {
     return localStorage.getItem("language") || getBrowserLanguage();
-}
+};
 
-async function setLanguage(lang) {
-    translations = await loadTranslations(lang);
-
-    localStorage.setItem("language", lang);
-
-    document.title = translations.title;
+const updateDocumentMeta = (lang, translationsData) => {
+    document.title = translationsData.title;
 
     document
         .querySelector('meta[name="description"]')
-        .setAttribute("content", translations.metaDescription);
+        .setAttribute("content", translationsData.metaDescription);
     document
         .querySelector('meta[property="og:description"]')
-        .setAttribute("content", translations.metaDescription);
-    document.querySelector('meta[property="og:title"]').setAttribute("content", translations.title);
+        .setAttribute("content", translationsData.metaDescription);
+    document
+        .querySelector('meta[property="og:title"]')
+        .setAttribute("content", translationsData.title);
 
+    document.documentElement.setAttribute("lang", lang);
+};
+
+const updateTranslations = (translationsData) => {
     document.querySelectorAll("[data-translate]").forEach((element) => {
         const key = element.getAttribute("data-translate");
-        const value = getNestedProperty(translations, key);
+        const value = getNestedProperty(translationsData, key);
         if (value) {
             element.textContent = value;
         }
@@ -54,7 +56,7 @@ async function setLanguage(lang) {
 
     document.querySelectorAll("[data-translate-alt]").forEach((element) => {
         const key = element.getAttribute("data-translate-alt");
-        const value = getNestedProperty(translations, key);
+        const value = getNestedProperty(translationsData, key);
         if (value) {
             element.setAttribute("alt", value);
         }
@@ -62,16 +64,41 @@ async function setLanguage(lang) {
 
     document.querySelectorAll("[data-translate-html]").forEach((element) => {
         const key = element.getAttribute("data-translate-html");
-        const value = getNestedProperty(translations, key);
+        const value = getNestedProperty(translationsData, key);
         if (value) {
             element.innerHTML = value;
         }
     });
+};
 
-    document.documentElement.setAttribute("lang", lang);
-}
+const setLanguage = async (lang) => {
+    translations = await loadTranslations(lang);
+    localStorage.setItem("language", lang);
+    updateDocumentMeta(lang, translations);
+    updateTranslations(translations);
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
     const currentLang = getCurrentLanguage();
     await setLanguage(currentLang);
 });
+
+// Export for Node.js/Jest (not executed in browser)
+/* eslint-disable no-undef */
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = {
+        loadTranslations,
+        getNestedProperty,
+        getBrowserLanguage,
+        getCurrentLanguage,
+        updateDocumentMeta,
+        updateTranslations,
+        setLanguage
+    };
+    /* eslint-enable no-undef */
+}
+
+if (typeof window !== "undefined") {
+    window.setLanguage = setLanguage;
+    window.getCurrentLanguage = getCurrentLanguage;
+}
