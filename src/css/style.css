@@ -61,23 +61,23 @@ a {
     align-items: center;
 }
 
-/* Language Selector */
+/* Language Selector - Mobile First */
 .language-selector-wrapper {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     z-index: 1000;
 }
 
-/* Custom Select Styles */
+/* Custom Select Styles - Mobile First */
 .custom-select {
     position: relative;
-    width: 150px;
+    width: 110px;
 }
 
 .custom-select-trigger {
-    padding: 10px 40px 10px 16px;
-    font-size: 15px;
+    padding: 8px 32px 8px 12px;
+    font-size: 13px;
     font-weight: 600;
     color: white;
     background-color: rgba(255, 255, 255, 0.15);
@@ -88,8 +88,8 @@ a {
     transition: all 0.3s ease;
     background-image: url("../assets/images/arrow-down.svg");
     background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 12px;
+    background-position: right 10px center;
+    background-size: 10px;
     user-select: none;
 }
 
@@ -128,8 +128,8 @@ a {
 }
 
 .custom-option {
-    padding: 10px 16px;
-    font-size: 15px;
+    padding: 8px 12px;
+    font-size: 13px;
     font-weight: 600;
     color: white;
     cursor: pointer;
@@ -151,19 +151,18 @@ a {
 
 /* Button icons */
 .btn-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
     filter: brightness(0) invert(1);
 }
 
-/* LinkedIn button */
+/* LinkedIn button - Mobile First */
 .btn-linkedin {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 130px;
-    width: 130px;
+    width: 100%;
     background-color: var(--clr-linkedin);
     color: var(--clr-white);
     border: 2px solid var(--clr-linkedin);
@@ -186,13 +185,12 @@ a {
     filter: brightness(0) invert(0);
 }
 
-/* GitHub button */
+/* GitHub button - Mobile First */
 .btn-github-outline {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 130px;
-    width: 130px;
+    width: 100%;
     background-color: transparent;
     color: var(--clr-white);
     border: 2px solid var(--clr-white);
@@ -224,59 +222,37 @@ a {
    4. MEDIA QUERIES (RESPONSIVE)
    =================================== */
 
-/* Tablet and mobile (below 992px) */
-@media (max-width: 991.98px) {
-    .col-10.col-sm-8.col-lg-6 {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
+/* Desktop and up (992px and above) */
+@media (min-width: 992px) {
+    .btn-linkedin,
+    .btn-github-outline {
+        width: auto;
+        min-width: 140px;
     }
 
-    .col-10.col-sm-8.col-lg-6 img {
-        margin: 0 auto;
-        display: block;
+    .btn-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
     }
-
-    .col-lg-6 {
-        text-align: center;
-    }
-
-    .d-grid.gap-2.d-md-flex {
-        justify-content: center !important;
-    }
-}
-
-/* Small mobile (below 576px) */
-@media (max-width: 575.98px) {
-    .container {
-        text-align: center;
-    }
-
-    .btn {
-        margin: 0.25rem !important;
-    }
-
     .language-selector-wrapper {
-        top: 10px;
-        right: 10px;
-    }
-
-    .language-selector {
-        padding: 8px 35px 8px 12px;
-        font-size: 13px;
+        top: 20px;
+        right: 20px;
     }
 
     .custom-select {
-        width: 120px;
+        width: 150px;
     }
 
     .custom-select-trigger {
-        padding: 8px 35px 8px 12px;
-        font-size: 13px;
+        padding: 10px 40px 10px 16px;
+        font-size: 15px;
+        background-position: right 12px center;
+        background-size: 12px;
     }
 
     .custom-option {
-        padding: 8px 12px;
-        font-size: 13px;
+        padding: 10px 16px;
+        font-size: 15px;
     }
 }
