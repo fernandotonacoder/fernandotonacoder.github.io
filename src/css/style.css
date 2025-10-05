@@ -61,7 +61,7 @@ a {
     align-items: center;
 }
 
-/* Language Selector - Mobile First */
+/* Language Selector */
 .language-selector-wrapper {
     position: absolute;
     top: 10px;
@@ -69,7 +69,7 @@ a {
     z-index: 1000;
 }
 
-/* Custom Select Styles - Mobile First */
+/* Custom Select Styles */
 .custom-select {
     position: relative;
     width: 110px;
@@ -157,7 +157,7 @@ a {
     filter: brightness(0) invert(1);
 }
 
-/* LinkedIn button - Mobile First */
+/* LinkedIn button */
 .btn-linkedin {
     display: flex;
     align-items: center;
@@ -185,7 +185,7 @@ a {
     filter: brightness(0) invert(0);
 }
 
-/* GitHub button - Mobile First */
+/* GitHub button */
 .btn-github-outline {
     display: flex;
     align-items: center;
