@@ -1,0 +1,32 @@
+{
+  "name": "fernandotonacoder.github.io",
+  "version": "1.0.0",
+  "description": "Fernando Tona's Personal Portfolio Website.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandotonacoder/fernandotonacoder.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Fernando Tona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fernandotonacoder/fernandotonacoder.github.io/issues"
+  },
+  "homepage": "https://github.com/fernandotonacoder/fernandotonacoder.github.io#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
