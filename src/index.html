@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fernando Tona - Software Developer specializing in .NET/C# and Azure. Problem-Solver with a Musician's Discipline.">
+    <meta name="description"
+        content="Fernando Tona - Software Developer specializing in .NET/C# and Azure. Problem-Solver with a Musician's Discipline.">
     <meta name="author" content="Fernando Tona">
     <meta name="keywords" content="Fernando Tona, Software Developer, .NET, C#, Azure, Developer Portfolio">
     <title>Fernando Tona - Developer</title>
 
     <meta property="og:title" content="Fernando Tona - Developer">
-    <meta property="og:description" content="Software Developer | .NET/C# | Azure | Problem-Solver with a Musician's Discipline">
+    <meta property="og:description"
+        content="Software Developer | .NET/C# | Azure | Problem-Solver with a Musician's Discipline">
     <meta property="og:image" content="https://fernandotonacoder.github.io/assets/images/fernando-tona-dev-pic.jpg">
     <meta property="og:url" content="https://fernandotonacoder.github.io/">
     <meta property="og:type" content="website">
@@ -26,15 +28,31 @@
 
     <section id="main" class="gradient-bg">
         <div class="container col-xxl-8 px-4 p-5">
+            <div class="language-selector-wrapper">
+                <div class="custom-select">
+                    <div class="custom-select-trigger" id="languageTrigger">
+                        <span id="selectedLanguage">English</span>
+                    </div>
+                    <div class="custom-options" id="languageOptions">
+                        <div class="custom-option" data-value="en">English</div>
+                        <div class="custom-option" data-value="es">Español</div>
+                        <div class="custom-option" data-value="fr">Français</div>
+                        <div class="custom-option" data-value="pt">Português</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
                     <img src="./assets/images/fernando-tona-dev-pic.jpg" class="d-block mx-auto img-fluid"
-                        alt="Fernando Tona picture" style="max-height: 450px; border-radius: 2%;" loading="lazy">
+                        alt="Fernando Tona picture" data-translate-alt="imageAlt"
+                        style="max-height: 450px; border-radius: 2%;" loading="lazy">
                 </div>
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold lh-1 mb-3" style="color: #070F2B;">Fernando Tona</h1>
-                    <p class="lead" style="color:white">Software Developer | .NET/C# | Azure</p>
-                    <p class="lead" style="color:white">Problem-Solver with a Musician’s Discipline</p>
+                    <p class="lead" style="color:white" data-translate="role">Software Developer | .NET/C# | Azure</p>
+                    <p class="lead" style="color:white" data-translate="tagline">Problem-Solver with a Musician's
+                        Discipline</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <a href="https://linkedin.com/in/fernandotona" target="_blank" rel="noopener noreferrer">
                             <button type="button" class="btn btn-linkedin btn-lg px-4 me-md-2">
@@ -53,6 +71,8 @@
 
     </section>
 
+    <script src="./js/translations.js"></script>
+    <script src="./js/custom-select.js"></script>
 </body>
 
 </html>
