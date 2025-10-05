@@ -1,32 +1,44 @@
 {
-  "name": "fernandotonacoder.github.io",
-  "version": "1.0.0",
-  "description": "Fernando Tona's Personal Portfolio Website.",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fernandotonacoder/fernandotonacoder.github.io.git"
-  },
-  "keywords": [
-    "portfolio",
-    "frontend",
-    "html",
-    "css",
-    "javascript"
-  ],
-  "author": "Fernando Tona",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fernandotonacoder/fernandotonacoder.github.io/issues"
-  },
-  "homepage": "https://github.com/fernandotonacoder/fernandotonacoder.github.io#readme",
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
-  }
+    "name": "fernandotonacoder.github.io",
+    "version": "1.0.0",
+    "description": "Fernando Tona's Personal Portfolio Website.",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint \"**/*.js\"",
+        "lint:fix": "eslint \"**/*.js\" --fix",
+        "format": "prettier --write \"**/*.{js,json,css,html,md}\"",
+        "format:check": "prettier --check \"**/*.{js,json,css,html,md}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fernandotonacoder/fernandotonacoder.github.io.git"
+    },
+    "keywords": [
+        "portfolio",
+        "frontend",
+        "html",
+        "css",
+        "javascript"
+    ],
+    "author": "Fernando Tona",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fernandotonacoder/fernandotonacoder.github.io/issues"
+    },
+    "homepage": "https://github.com/fernandotonacoder/fernandotonacoder.github.io#readme",
+    "devDependencies": {
+        "@eslint/js": "^9.37.0",
+        "@eslint/json": "^0.13.2",
+        "eslint": "^9.37.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-html": "^8.1.3",
+        "eslint-plugin-prettier": "^5.5.4",
+        "globals": "^16.4.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "prettier": "^3.6.2"
+    }
 }

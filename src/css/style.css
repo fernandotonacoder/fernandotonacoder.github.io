@@ -17,11 +17,11 @@ a {
 
 /* Color Variables */
 :root {
-    --clr-navy: #070F2B;
-    --clr-gradient-mid: #3572EF;
-    --clr-gradient-end: #3ABEF9;
-    --clr-linkedin: #2856C7;
-    --clr-white: #FFFFFF;
+    --clr-navy: #070f2b;
+    --clr-gradient-mid: #3572ef;
+    --clr-gradient-end: #3abef9;
+    --clr-linkedin: #2856c7;
+    --clr-white: #ffffff;
 }
 
 /* ===================================
@@ -30,7 +30,12 @@ a {
 
 /* Background and animations */
 .gradient-bg {
-    background: linear-gradient(300deg, var(--clr-navy), var(--clr-gradient-mid), var(--clr-gradient-end));
+    background: linear-gradient(
+        300deg,
+        var(--clr-navy),
+        var(--clr-gradient-mid),
+        var(--clr-gradient-end)
+    );
     background-size: 180% 180%;
     animation: gradient-animation 10s ease infinite;
 }
@@ -81,7 +86,7 @@ a {
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-image: url('../assets/images/arrow-down.svg');
+    background-image: url("../assets/images/arrow-down.svg");
     background-repeat: no-repeat;
     background-position: right 12px center;
     background-size: 12px;
@@ -226,16 +231,16 @@ a {
         justify-content: center;
         margin: 0 auto;
     }
-    
+
     .col-10.col-sm-8.col-lg-6 img {
         margin: 0 auto;
         display: block;
     }
-    
+
     .col-lg-6 {
         text-align: center;
     }
-    
+
     .d-grid.gap-2.d-md-flex {
         justify-content: center !important;
     }
@@ -246,30 +251,30 @@ a {
     .container {
         text-align: center;
     }
-    
+
     .btn {
         margin: 0.25rem !important;
     }
-    
+
     .language-selector-wrapper {
         top: 10px;
         right: 10px;
     }
-    
+
     .language-selector {
         padding: 8px 35px 8px 12px;
         font-size: 13px;
     }
-    
+
     .custom-select {
         width: 120px;
     }
-    
+
     .custom-select-trigger {
         padding: 8px 35px 8px 12px;
         font-size: 13px;
     }
-    
+
     .custom-option {
         padding: 8px 12px;
         font-size: 13px;
