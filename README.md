@@ -1,4 +1,4 @@
-# Fernando Tona - Portfolio Website
+# Fernando Tona - Professional Profile
 
 [![CI/CD Pipeline](https://github.com/fernandotonacoder/fernandotonacoder.github.io/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/fernandotonacoder/fernandotonacoder.github.io/actions/workflows/ci-cd.yml)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-success?logo=github)](https://fernandotonacoder.github.io)
@@ -11,7 +11,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-> Personal portfolio website showcasing my work as a Software Developer specializing in .NET/C# and Azure.
+> Professional profile website showcasing my expertise as a Software Developer.
 
 **Live Site:** [fernandotonacoder.github.io](https://fernandotonacoder.github.io)
 
@@ -39,7 +39,7 @@
 Simply visit: **[fernandotonacoder.github.io](https://fernandotonacoder.github.io)**
 
 ### For Developers
-\`\`\`bash
+```bash
 # Clone and install
 git clone https://github.com/fernandotonacoder/fernandotonacoder.github.io.git
 cd fernandotonacoder.github.io
@@ -55,11 +55,11 @@ open src/index.html
 
 # Or Option 2: with local server
 python -m http.server 8000 -d src
-\`\`\`
+```
 
 ## Project Structure
 
-\`\`\`
+```
 src/
 ├── index.html           # Main page
 ├── css/style.css        # Styles
@@ -68,17 +68,17 @@ src/
 │   ├── custom-select.js # Language selector
 │   └── *.test.js        # Unit tests
 └── locales/             # Translation files (en, es, fr, pt)
-\`\`\`
+```
 
 ## Development Commands
 
-\`\`\`bash
-npm test              # Run tests
-npm run lint          # Check code quality
-npm run lint:fix      # Auto-fix issues
-npm run format        # Format code
-npm run format:check  # Check formatting
-\`\`\`
+```bash
+npm test              # Run tests with Jest
+npm run lint          # Check code quality with ESLint
+npm run lint:fix      # Auto-fix issues with ESLint
+npm run format        # Format code with Prettier
+npm run format:check  # Check formatting with Prettier
+```
 
 ## CI/CD Pipeline
 
@@ -89,17 +89,12 @@ npm run format:check  # Check formatting
 ## Author
 
 **Fernando Tona**  
-[Website](https://fernandotonacoder.github.io) • [LinkedIn](https://www.linkedin.com/in/fernandotona/) • [GitHub](https://github.com/fernandotonacoder)
+[Website](https://fernandotonacoder.github.io) • [LinkedIn](https://www.linkedin.com/in/fernandotona/) • [GitHub](https://github.com/fernandotonacoder) • fernandotonacoder@protonmail.com
 
 ## Documentation
 
-- **[Technical Documentation](docs/project-instructions.md)** - Architecture, conventions, and detailed guides
-- **[Development Guide](docs/development.md)** - Setup, testing, and contribution guidelines
-- **[Design System](docs/design.md)** - Colors, typography, and styling patterns
-
-## License
-
-MIT License - see [LICENSE](LICENSE) for details.
+- **[Technical Documentation](docs/project-instructions.md)** - Architecture and system internals
+- **[Contributing Guide](docs/CONTRIBUTING.md)** - Development workflow and key decisions
 
 ---
 
