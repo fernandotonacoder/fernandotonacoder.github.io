@@ -33,30 +33,15 @@
 **CI/CD:** GitHub Actions  
 **Deployment:** GitHub Pages
 
-## Quick Start
-
-### For Visitors
-
-Simply visit: **[fernandotonacoder.github.io](https://fernandotonacoder.github.io)**
-
-### For Developers
+## Development Commands
 
 ```bash
-# Clone and install
-git clone https://github.com/fernandotonacoder/fernandotonacoder.github.io.git
-cd fernandotonacoder.github.io
-npm install
-
-# Run tests and checks
-npm test
-npm run lint
-npm run format:check
-
-# Open locally (Option 1: directly in browser)
-open src/index.html
-
-# Or Option 2: with local server
-python -m http.server 8000 -d src
+npm install           # Dependencies for Jest, ESLint and Prettier
+npm test              # Run tests with Jest
+npm run lint          # Check code quality with ESLint
+npm run lint:fix      # Auto-fix issues with ESLint
+npm run format        # Format code with Prettier
+npm run format:check  # Check formatting with Prettier
 ```
 
 ## Project Structure
@@ -72,21 +57,12 @@ src/
 └── locales/             # Translation files (en, es, fr, pt)
 ```
 
-## Development Commands
-
-```bash
-npm test              # Run tests with Jest
-npm run lint          # Check code quality with ESLint
-npm run lint:fix      # Auto-fix issues with ESLint
-npm run format        # Format code with Prettier
-npm run format:check  # Check formatting with Prettier
-```
-
 ## CI/CD Pipeline
 
 - **On PR:** Runs tests, linting, and format checks
 - **On Merge:** Deploys to GitHub Pages automatically
-- **Branch Protection:** All checks must pass before merging
+- **Quality Assurance** All checks must pass before merging
+- **Branch Protection:** _main_ branch protected. Use feature branch and PR.
 
 ## Author
 
@@ -95,8 +71,8 @@ npm run format:check  # Check formatting with Prettier
 
 ## Documentation
 
-- **[Technical Documentation](docs/project-instructions.md)** - Architecture and system internals
-- **[Contributing Guide](docs/CONTRIBUTING.md)** - Development workflow and key decisions
+- **[Architecture Guide](docs/ARCHITECTURE.md)** - How the system works and technical decisions
+- **[Contributing Guide](docs/CONTRIBUTING.md)** - Development workflow and setup
 
 ---
 
