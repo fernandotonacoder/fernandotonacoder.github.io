@@ -44,4 +44,4 @@ npm run format:check  # Check formatting with Prettier
 3. Update `languageNames` in `custom-select.js`
 4. Add HTML option
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for technical details.
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for technical details.
