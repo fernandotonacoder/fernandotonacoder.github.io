@@ -17,19 +17,22 @@ Could've used i18next, but that's 50KB+ for something I can do in ~100 lines.
 ### How It Works
 
 **Language detection:**
+
 1. localStorage (`language` key) - remembers user choice
 2. Browser language (`navigator.language`)
 3. Fallback to English
 
 **Translation keys:**
+
 - Flat JSON: `{"title": "...", "role": "..."}`
 - No nesting (keeps it simple)
 - Same keys across all languages (en, es, fr, pt)
 
 **HTML usage:**
+
 ```html
 <p data-translate="role">Default text</p>
-<img data-translate-alt="imageAlt" alt="Default">
+<img data-translate-alt="imageAlt" alt="Default" />
 ```
 
 **SEO:** Updates `<title>`, meta description, and Open Graph tags on language change.
@@ -37,6 +40,7 @@ Could've used i18next, but that's 50KB+ for something I can do in ~100 lines.
 ### Module Pattern
 
 Supports both browser and Jest:
+
 ```javascript
 // Browser: global functions
 if (typeof window !== "undefined") {
@@ -58,6 +62,7 @@ No build step needed. Works everywhere.
 Standard `<select>` can't do glassmorphism without hacky CSS. Custom dropdown gives full control.
 
 **Features:**
+
 - Click outside to close
 - Keyboard accessible
 - Pure JavaScript (no libs)
@@ -69,11 +74,16 @@ Standard `<select>` can't do glassmorphism without hacky CSS. Custom dropdown gi
 ### Mobile-First
 
 Base styles = mobile. Enhance for desktop:
+
 ```css
-.custom-select { width: 110px; } /* mobile */
+.custom-select {
+    width: 110px;
+} /* mobile */
 
 @media (min-width: 992px) {
-    .custom-select { width: 150px; } /* desktop */
+    .custom-select {
+        width: 150px;
+    } /* desktop */
 }
 ```
 
@@ -88,12 +98,14 @@ Base styles = mobile. Enhance for desktop:
 ```
 
 **Glassmorphism:**
+
 ```css
 background: rgba(255, 255, 255, 0.1);
 backdrop-filter: blur(10px);
 ```
 
 **SVG colors:** Use filters instead of multiple files:
+
 ```css
 filter: brightness(0) invert(1); /* white */
 filter: brightness(0) invert(0); /* dark */
@@ -106,12 +118,14 @@ filter: brightness(0) invert(0); /* dark */
 ### Coverage: ~90%
 
 **What's tested:**
+
 - Translation loading (success + errors)
 - DOM updates (textContent, alt, meta tags)
 - localStorage integration
 - Dropdown behavior
 
 **What's not:**
+
 - Browser APIs (tested by browsers)
 - Bootstrap (tested by Bootstrap)
 - DOMContentLoaded listener (manual test)
@@ -123,6 +137,7 @@ filter: brightness(0) invert(0); /* dark */
 ### ESLint Flat Config
 
 ESLint 9+ requires it. Multiple environments need different globals:
+
 - Browser JS: `setLanguage`, `getCurrentLanguage`
 - Test files: `describe`, `test`, `expect`
 - Node scripts: `module`, `require`
@@ -151,6 +166,7 @@ Need DOM APIs without a browser. Jest runs tests in Node.js with simulated DOM.
 ### GitHub Actions Workflow
 
 **On Pull Request:**
+
 ```yaml
 - Format check (Prettier)
 - Lint (ESLint)
@@ -159,6 +175,7 @@ Need DOM APIs without a browser. Jest runs tests in Node.js with simulated DOM.
 ```
 
 **On Push to Main:**
+
 ```yaml
 - All PR checks
 - Build (prepare src/ folder)
@@ -170,6 +187,7 @@ Need DOM APIs without a browser. Jest runs tests in Node.js with simulated DOM.
 ### GitHub Pages
 
 **Configuration:**
+
 - Source: GitHub Actions (not branch-based)
 - Deploys: `./src` directory
 - URL: https://fernandotonacoder.github.io

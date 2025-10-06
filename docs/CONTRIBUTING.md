@@ -33,10 +33,12 @@ npm run format:check  # Check formatting with Prettier
 ## Adding Features
 
 **New translation key:**
+
 1. Add to all 4 locale files (en, es, fr, pt)
 2. Use: `<p data-translate="key">Default</p>`
 
 **New language:**
+
 1. Create `locales/{code}.json`
 2. Update `supportedLangs` in `translations.js`
 3. Update `languageNames` in `custom-select.js`
