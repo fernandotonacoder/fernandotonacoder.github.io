@@ -9,7 +9,7 @@
     --clr-gradient-end: #3abef9;
     --clr-linkedin: #2856c7;
     --clr-white: #ffffff;
-    
+
     /* Responsive values - Mobile first */
     --lang-selector-top: 15px;
     --lang-selector-right: 15px;
@@ -59,7 +59,12 @@ body {
    ================================================================= */
 
 .hero {
-    background: linear-gradient(300deg, var(--clr-navy), var(--clr-gradient-mid), var(--clr-gradient-end));
+    background: linear-gradient(
+        300deg,
+        var(--clr-navy),
+        var(--clr-gradient-mid),
+        var(--clr-gradient-end)
+    );
     background-size: 180% 180%;
     animation: gradient-animation 10s ease infinite;
     min-height: 100vh;
@@ -69,8 +74,13 @@ body {
 }
 
 @keyframes gradient-animation {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 @media (min-width: 992px) {
