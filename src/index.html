@@ -34,23 +34,21 @@
             integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
     </head>
 
     <body>
-        <section id="main" class="gradient-bg">
-            <div class="container col-xxl-8">
-                <div class="language-selector-wrapper">
-                    <div class="custom-select">
-                        <div class="custom-select-trigger" id="languageTrigger">
-                            <span id="selectedLanguage">English</span>
-                        </div>
-                        <div class="custom-options" id="languageOptions">
-                            <div class="custom-option" data-value="en">English</div>
-                            <div class="custom-option" data-value="es">Español</div>
-                            <div class="custom-option" data-value="fr">Français</div>
-                            <div class="custom-option" data-value="pt">Português</div>
-                        </div>
+        <section class="hero">
+            <div class="container col-xxl-8 hero__container">
+                <div class="lang-selector">
+                    <div class="lang-selector__trigger" id="languageTrigger">
+                        <span id="selectedLanguage">English</span>
+                    </div>
+                    <div class="lang-selector__dropdown" id="languageOptions">
+                        <div class="lang-selector__option" data-value="en">English</div>
+                        <div class="lang-selector__option" data-value="es">Español</div>
+                        <div class="lang-selector__option" data-value="fr">Français</div>
+                        <div class="lang-selector__option" data-value="pt">Português</div>
                     </div>
                 </div>
 
@@ -58,18 +56,18 @@
                     <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto mx-lg-0 text-center">
                         <img
                             src="./assets/images/fernando-tona-dev-pic.jpg"
-                            class="profile-image"
+                            class="hero__profile-image"
                             alt="Fernando Tona picture"
                             data-translate-alt="imageAlt"
                             loading="lazy"
                         />
                     </div>
                     <div class="col-lg-6 text-center text-lg-start">
-                        <h1 class="display-5 fw-bold lh-1 mb-3 main-title">Fernando Tona</h1>
-                        <p class="lead" data-translate="role">
+                        <h1 class="display-5 fw-bold lh-1 mb-3 hero__title">Fernando Tona</h1>
+                        <p class="lead hero__text" data-translate="role">
                             Software Developer | .NET/C# | Azure
                         </p>
-                        <p class="lead" data-translate="tagline">
+                        <p class="lead hero__text" data-translate="tagline">
                             Problem-Solver with a Musician's Discipline
                         </p>
                         <div class="d-grid gap-2 d-lg-flex justify-content-lg-start">
@@ -78,11 +76,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <button type="button" class="btn btn-linkedin btn-lg px-4">
+                                <button type="button" class="btn btn--linkedin btn-lg px-4">
                                     <img
                                         src="./assets/images/linkedin.svg"
                                         alt="LinkedIn logo"
-                                        class="btn-icon"
+                                        class="btn__icon"
                                     />
                                     LinkedIn
                                 </button>
@@ -92,11 +90,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <button type="button" class="btn btn-github-outline btn-lg px-4">
+                                <button type="button" class="btn btn--github btn-lg px-4">
                                     <img
                                         src="./assets/images/github.svg"
                                         alt="GitHub logo"
-                                        class="btn-icon"
+                                        class="btn__icon"
                                     />
                                     GitHub
                                 </button>
