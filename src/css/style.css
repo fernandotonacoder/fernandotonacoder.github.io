@@ -222,6 +222,106 @@ a {
    4. MEDIA QUERIES (RESPONSIVE)
    =================================== */
 
+/* Mobile optimizations (up to 576px) */
+@media (max-width: 576px) {
+    .language-selector-wrapper {
+        top: 15px;
+        right: 15px;
+    }
+
+    .custom-select {
+        width: 100px;
+    }
+
+    .custom-select-trigger {
+        padding: 6px 28px 6px 10px;
+        font-size: 12px;
+        background-position: right 8px center;
+        background-size: 8px;
+    }
+
+    .custom-option {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Align container properly */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Make image width dynamic with 15px margin on both sides */
+    .col-12.col-sm-10 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .col-12.col-sm-10 img {
+        max-width: calc(100vw - 30px) !important;
+        width: calc(100vw - 30px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Reduce heading size */
+    .display-5 {
+        font-size: 2rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Reduce lead text size */
+    .lead {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Reduce button padding */
+    .btn-lg {
+        padding: 0.5rem 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* Adjust spacing - KILL THE GAP */
+    .row.g-5 {
+        row-gap: 1.5rem !important;
+        gap: 1.5rem !important;
+    }
+
+    .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    /* Target the text column directly */
+    .col-lg-6 {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Tighten ALL headings and paragraphs */
+    h1, .h1, .display-5 {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+        padding-top: 0 !important;
+    }
+
+    p, .lead {
+        margin-bottom: 0.75rem !important;
+    }
+
+    .d-grid {
+        margin-top: 1.25rem !important;
+    }
+}
+
 /* Desktop and up (992px and above) */
 @media (min-width: 992px) {
     .btn-linkedin,
