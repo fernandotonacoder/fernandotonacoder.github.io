@@ -283,20 +283,19 @@ a {
 
     /* Container and spacing */
     .container {
-        padding: 0.5rem 15px 1.5rem 15px;
+        padding: 60px 15px 1.5rem 15px;
     }
 
     .row {
-        margin-left: 0;
-        margin-right: 0;
-        row-gap: 1.5rem;
+        margin: 0;
+        row-gap: 15px;
     }
 
-    /* Image column - ensure clearance from language selector */
+    /* Image column */
     .col-12.col-sm-10 {
-        margin-top: 100px;
         max-width: 100%;
         padding: 0;
+        margin: 0;
     }
 
     .profile-image {
@@ -330,6 +329,11 @@ a {
 
 /* Desktop and up (992px and above) */
 @media (min-width: 992px) {
+    /* Add spacing between columns on desktop */
+    .row {
+        row-gap: 3rem;
+    }
+
     .btn-linkedin,
     .btn-github-outline {
         width: auto;
