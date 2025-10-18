@@ -1,16 +1,15 @@
-/* =================================================================
-   VARIABLES - Design tokens and responsive values
-   ================================================================= */
+/* ============================================================
+   VARIABLES - CSS custom properties for responsive design
+   ============================================================ */
 
 :root {
-    /* Colors */
     --clr-navy: #070f2b;
     --clr-gradient-mid: #3572ef;
     --clr-gradient-end: #3abef9;
     --clr-linkedin: #2856c7;
     --clr-white: #ffffff;
 
-    /* Responsive values - Mobile first */
+    /* Mobile-first responsive values */
     --lang-selector-top: 15px;
     --lang-selector-right: 15px;
     --lang-selector-width: 100px;
@@ -41,9 +40,9 @@
     }
 }
 
-/* =================================================================
-   BASE - Global styles
-   ================================================================= */
+/* ============================================================
+   BASE
+   ============================================================ */
 
 a {
     text-decoration: none;
@@ -54,9 +53,9 @@ body {
     max-width: 100vw;
 }
 
-/* =================================================================
-   HERO SECTION - Main landing area
-   ================================================================= */
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
 
 .hero {
     background: linear-gradient(
@@ -95,7 +94,7 @@ body {
 
 .hero__profile-image {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem auto;
     width: 100%;
     max-width: 350px;
     border-radius: 2%;
@@ -114,11 +113,24 @@ body {
 
 .hero__text {
     color: var(--clr-white);
+    white-space: nowrap; /* Keep text on single line */
 }
 
-/* =================================================================
-   LANGUAGE SELECTOR - Dropdown component
-   ================================================================= */
+@media (max-width: 576px) {
+    .hero__text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero__text {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================================
+   LANGUAGE SELECTOR (BEM naming: lang-selector)
+   ============================================================ */
 
 .lang-selector {
     position: absolute;
@@ -199,9 +211,9 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-/* =================================================================
-   BUTTONS - LinkedIn and GitHub
-   ================================================================= */
+/* ============================================================
+   BUTTONS (BEM naming: btn--linkedin, btn--github)
+   ============================================================ */
 
 .btn__icon {
     width: var(--btn-icon-size);
@@ -210,7 +222,6 @@ body {
     filter: brightness(0) invert(1);
 }
 
-/* LinkedIn button */
 .btn--linkedin {
     display: flex;
     align-items: center;
@@ -238,7 +249,6 @@ body {
     filter: brightness(0) invert(0);
 }
 
-/* GitHub button */
 .btn--github {
     display: flex;
     align-items: center;
