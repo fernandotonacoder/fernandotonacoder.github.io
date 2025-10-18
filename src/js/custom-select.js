@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const customSelect = document.querySelector(".custom-select");
+    const langSelector = document.querySelector(".lang-selector");
     const trigger = document.getElementById("languageTrigger");
     const options = document.getElementById("languageOptions");
     const selectedLanguageSpan = document.getElementById("selectedLanguage");
@@ -13,25 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     trigger.addEventListener("click", (e) => {
         e.stopPropagation();
-        customSelect.classList.toggle("open");
+        langSelector.classList.toggle("lang-selector--open");
     });
 
     document.addEventListener("click", () => {
-        customSelect.classList.remove("open");
+        langSelector.classList.remove("lang-selector--open");
     });
 
     options.addEventListener("click", async (e) => {
-        if (e.target.classList.contains("custom-option")) {
+        if (e.target.classList.contains("lang-selector__option")) {
             const selectedValue = e.target.getAttribute("data-value");
 
-            document.querySelectorAll(".custom-option").forEach((opt) => {
-                opt.classList.remove("selected");
+            document.querySelectorAll(".lang-selector__option").forEach((opt) => {
+                opt.classList.remove("lang-selector__option--selected");
             });
-            e.target.classList.add("selected");
+            e.target.classList.add("lang-selector__option--selected");
 
             selectedLanguageSpan.textContent = languageNames[selectedValue];
 
-            customSelect.classList.remove("open");
+            langSelector.classList.remove("lang-selector--open");
 
             await setLanguage(selectedValue);
         }
@@ -40,6 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentLang = getCurrentLanguage();
     selectedLanguageSpan.textContent = languageNames[currentLang];
     document
-        .querySelector(`.custom-option[data-value="${currentLang}"]`)
-        ?.classList.add("selected");
+        .querySelector(`.lang-selector__option[data-value="${currentLang}"]`)
+        ?.classList.add("lang-selector__option--selected");
 });

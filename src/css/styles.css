@@ -1,0 +1,291 @@
+/* ============================================================
+   VARIABLES - CSS custom properties for responsive design
+   ============================================================ */
+
+:root {
+    --clr-navy: #070f2b;
+    --clr-gradient-mid: #3572ef;
+    --clr-gradient-end: #3abef9;
+    --clr-linkedin: #2856c7;
+    --clr-white: #ffffff;
+
+    /* Mobile-first responsive values */
+    --lang-selector-top: 15px;
+    --lang-selector-right: 15px;
+    --lang-selector-width: 100px;
+    --lang-selector-padding: 6px 28px 6px 10px;
+    --lang-selector-font-size: 12px;
+    --lang-option-padding: 6px 10px;
+    --lang-arrow-size: 8px;
+    --lang-arrow-position: right 8px center;
+    --btn-icon-size: 18px;
+    --btn-icon-margin: 6px;
+    --container-padding: 60px 15px 1.5rem 15px;
+}
+
+/* Desktop overrides */
+@media (min-width: 992px) {
+    :root {
+        --lang-selector-top: 20px;
+        --lang-selector-right: 20px;
+        --lang-selector-width: 150px;
+        --lang-selector-padding: 10px 40px 10px 16px;
+        --lang-selector-font-size: 15px;
+        --lang-option-padding: 10px 16px;
+        --lang-arrow-size: 12px;
+        --lang-arrow-position: right 12px center;
+        --btn-icon-size: 20px;
+        --btn-icon-margin: 8px;
+        --container-padding: 3rem 1.5rem;
+    }
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+    background: linear-gradient(
+        300deg,
+        var(--clr-navy),
+        var(--clr-gradient-mid),
+        var(--clr-gradient-end)
+    );
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+@keyframes gradient-animation {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero {
+        align-items: center;
+    }
+}
+
+.hero__container {
+    padding: var(--container-padding);
+}
+
+.hero__profile-image {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 2%;
+}
+
+@media (max-width: 576px) {
+    .hero__profile-image {
+        width: calc(100vw - 30px);
+        max-width: calc(100vw - 30px);
+    }
+}
+
+.hero__title {
+    color: var(--clr-navy);
+}
+
+.hero__text {
+    color: var(--clr-white);
+    white-space: nowrap; /* Keep text on single line */
+}
+
+@media (max-width: 576px) {
+    .hero__text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero__text {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================================
+   LANGUAGE SELECTOR (BEM naming: lang-selector)
+   ============================================================ */
+
+.lang-selector {
+    position: absolute;
+    top: var(--lang-selector-top);
+    right: var(--lang-selector-right);
+    z-index: 1000;
+    width: var(--lang-selector-width);
+}
+
+.lang-selector__trigger {
+    width: 100%;
+    padding: var(--lang-selector-padding);
+    font-size: var(--lang-selector-font-size);
+    font-weight: 600;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    background-image: url("../assets/images/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: var(--lang-arrow-position);
+    background-size: var(--lang-arrow-size);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.lang-selector__trigger:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.lang-selector--open .lang-selector__trigger {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.lang-selector__dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.lang-selector--open .lang-selector__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-selector__option {
+    padding: var(--lang-option-padding);
+    font-size: var(--lang-selector-font-size);
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.lang-selector__option:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lang-selector__option--selected {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   BUTTONS (BEM naming: btn--linkedin, btn--github)
+   ============================================================ */
+
+.btn__icon {
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+    margin-right: var(--btn-icon-margin);
+    filter: brightness(0) invert(1);
+}
+
+.btn--linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--clr-linkedin);
+    color: var(--clr-white);
+    border: 2px solid var(--clr-linkedin);
+}
+
+.btn--linkedin:hover {
+    background-color: var(--clr-navy);
+    color: var(--clr-white);
+}
+
+.btn--linkedin:focus,
+.btn--linkedin:active {
+    background-color: var(--clr-white);
+    color: var(--clr-navy);
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 181, 0.25);
+}
+
+.btn--linkedin:focus .btn__icon,
+.btn--linkedin:active .btn__icon {
+    filter: brightness(0) invert(0);
+}
+
+.btn--github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+    color: var(--clr-white);
+    border: 2px solid var(--clr-white);
+}
+
+.btn--github:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-navy);
+    border-color: var(--clr-white);
+}
+
+.btn--github:focus,
+.btn--github:active {
+    background-color: var(--clr-navy);
+    color: var(--clr-white);
+    border-color: var(--clr-navy);
+}
+
+.btn--github:hover .btn__icon {
+    filter: brightness(0) invert(0);
+}
+
+.btn--github:focus .btn__icon,
+.btn--github:active .btn__icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Desktop button sizing */
+@media (min-width: 992px) {
+    .btn--linkedin,
+    .btn--github {
+        width: auto;
+        min-width: 140px;
+    }
+}
