@@ -64,11 +64,6 @@ src/
 - **Quality Assurance** All checks must pass before merging
 - **Branch Protection:** _main_ branch protected. Use feature branch and PR.
 
-## Author
-
-**Fernando Tona**  
-[Website](https://fernandotonacoder.github.io) • [LinkedIn](https://www.linkedin.com/in/fernandotona/) • [GitHub](https://github.com/fernandotonacoder)
-
 ## Documentation
 
 - **[Architecture Guide](docs/ARCHITECTURE.md)** - How the system works and technical decisions
@@ -81,5 +76,6 @@ src/
 **⭐ Star this repo if you find it useful!**
 
 Made with ❤️ by Fernando Tona
+[Website](https://fernandotonacoder.github.io) • [LinkedIn](https://www.linkedin.com/in/fernandotona/) • [GitHub](https://github.com/fernandotonacoder)
 
 </div>
