@@ -67,7 +67,7 @@ src/
 ## Author
 
 **Fernando Tona**  
-[Website](https://fernandotonacoder.github.io) • [LinkedIn](https://www.linkedin.com/in/fernandotona/) • [GitHub](https://github.com/fernandotonacoder) • fernandotonacoder@protonmail.com
+[Website](https://fernandotonacoder.github.io) • [LinkedIn](https://www.linkedin.com/in/fernandotona/) • [GitHub](https://github.com/fernandotonacoder)
 
 ## Documentation
 
